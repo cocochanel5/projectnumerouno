@@ -1,0 +1,14 @@
+$(function (){
+    $.ajax({
+        type: 'GET'
+        accept: 'application/json'
+        user-key: "a69ae2983ac452ed34005f3a9f4ab7c6"
+        queryURL: "https://developers.zomato.com/api/v2.1/cuisines?city_id=281"
+
+    });
+    
+    var queryURL = "https://www.food2fork.com/api/search? + key=144a80258fe75195bc7af4784ceb90f2 + &q=burger";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
