@@ -1,4 +1,10 @@
 .img {
   width: 200px;
   height: 200px;
+  padding: 20px;
+  align-content: center;
+  padding-top: 0;
+}
+.div {
+    font-size:15px;
 }

@@ -1,25 +1,4 @@
-$.ajax({
-    method: 'GET',
-    url: "https://developers.zomato.com/api/v2.1/cuisines?city_id=281",
-    contentType: '"Accept: application/json',
-    headers: {
-        'user-key': "a69ae2983ac452ed34005f3a9f4ab7c6"
-    }
-
-}).then(function(response) {
-    console.log(response);
-    var results = response.cuisines;
-
-    for (var i = 0; i < results.length; i++) {
-        if (results[i].cuisine_name === "Burger") {
-            
-            var burgerDiv = $("<div>");
-
-        }
-    }
-});
-
-// $("button").on("click", function() {
+$("button").on("click", function() {
 
 $.ajax({
     method: 'GET',
@@ -36,7 +15,7 @@ $.ajax({
     for (var i = 0; i < burgerResponse.length; i++) {
         burgerResponse[i].restaurant.name;
 
-        var burgerHtml = $("<div>");
+        var burgerHtml = $("<div>").addClass('div');
 
         burgerHtml.text(burgerResponse[i].restaurant.name);
 
@@ -59,9 +38,10 @@ $.ajax({
 
     }
 });
+});
 
 
 
-/* $("button").on("click", function() {
-      // In this case, the "this" keyword refers to the button that was clicked
-      var burger = $(this).attr("burger-btn"); */
+// $("button").on("click", function() {
+//       // In this case, the "this" keyword refers to the button that was clicked
+//       var burger = $(this).attr("burger-btn"); 
