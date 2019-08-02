@@ -1,13 +1,19 @@
 .img {
   width: 200px;
   height: 200px;
-  padding: 20px;
-  align-content: center;
-  padding-top: 0;
 }
-.div {
-    font-size:15px;
-}
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+ .divThatWillContainBothImageAndText { 
+  float: left;
+  width: 33.33%;
+  padding: 30px;
+ }
 
 .fb-like-container {
     position: relative;
@@ -21,3 +27,9 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
+
+
+    
+  
+ 
+  

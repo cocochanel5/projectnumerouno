@@ -15,29 +15,20 @@ $.ajax({
     for (var i = 0; i < burgerResponse.length; i++) {
         burgerResponse[i].restaurant.name;
 
-        var burgerHtml = $("<div>").addClass('div');
-
-        burgerHtml.text(burgerResponse[i].restaurant.name);
-
-        $(".burgerRow").append(burgerHtml);
-
-        // var p = $("<p>").text("address + zipCode");
-
-        // var address = burgerResponse.restaurant.location.address;
-
-        // var zipCode = burgerResponse.restaurant.location.zipcode;
+        var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
 
         var burgerImage = $("<img>").addClass('img');
 
+        var pTag = $("<p>")
+
         burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
 
+        pTag.text(burgerResponse[i].restaurant.name);
 
-        burgerHtml.append(burgerImage)
+        divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
+        
 
-        // var facebookLike = 
-    
-        // burgerHtml.append(p);
-
+        $(".burgerRow").append(divThatWillContainBothImageAndText);
     }
 });
 });
