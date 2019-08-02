@@ -8,3 +8,16 @@
 .div {
     font-size:15px;
 }
+
+.fb-like-container {
+    position: relative;
+    padding: 0;
+    padding-top: 55px;
+  }
+  .fb-like {
+    position: absolute;
+    top: 50%;
+    left: 57%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
