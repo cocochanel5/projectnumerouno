@@ -1,0 +1,35 @@
+.img {
+  width: 200px;
+  height: 200px;
+}
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+ .divThatWillContainBothImageAndText { 
+  float: left;
+  width: 33.33%;
+  padding: 30px;
+ }
+
+.fb-like-container {
+    position: relative;
+    padding: 0;
+    padding-top: 55px;
+  }
+  .fb-like {
+    position: absolute;
+    top: 50%;
+    left: 57%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+    
+  
+ 
+  
