@@ -13,7 +13,7 @@ $.ajax({
     var burgerResponse = response.restaurants;
 
     for (var i = 0; i < burgerResponse.length; i++) {
-        burgerResponse[i].restaurant.name;
+        // burgerResponse[i].restaurant.name;
 
         var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
 
@@ -30,7 +30,7 @@ $.ajax({
 
         $(".burgerRow").append(divThatWillContainBothImageAndText);
         $('img').on("error", function (){
-          $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg(32 kB)');
+          $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg');
       });
 };
 });
