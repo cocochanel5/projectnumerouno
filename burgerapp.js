@@ -29,12 +29,9 @@ $.ajax({
         
 
         $(".burgerRow").append(divThatWillContainBothImageAndText);
-
-    // function removeBadImage () {
-    //     var badImage = (burgerResponse == 403)
-
-    //     badImage.remove();
-    // }
+        $('img').on("error", function (){
+          $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg(32 kB)');
+      });
 };
 });
 FB.api(
