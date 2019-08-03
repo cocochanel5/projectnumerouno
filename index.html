@@ -8,9 +8,17 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="burgerapp.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+
+        
         <link rel="stylesheet" href="burgerapp.css">
     </head>
     <body>
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <!-- Facebook API Like Button -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=488191431940499&autoLogAppEvents=1"></script>
+    
         <div class="container">
             <div class="jumbotron bg-dark text-white m-3 text-center">
                 <h1>
@@ -49,6 +57,30 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
+
+            <div class="input-group mb-3 container row justify-content-center">
+                    <div class="input-group-prepend"></div>
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon1">GIVE ME BURGERS</button>
+                    </div>
+                </div>
+            </div>  
+
+            <div class ="fb-like-container">    
+            <div class="fb-like" data-href="https://cocochanel5.github.io/projectnumerouno/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+            </div> 
+
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-10 bg-dark text-white p-3 mx-auto flex-column burgerRow"></div>  
+                <div class="divThatWillContainBothImageAndText"></div>
+            </div>
+        </div>
+        
+        </div>
+        <script src="burgerapp.js"></script>   
+
             <div class="row m-3">
                 <div class="col-6 bg-dark text-white p-3 mx-auto">
                     <h1>
@@ -62,5 +94,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>

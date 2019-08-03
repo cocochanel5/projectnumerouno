@@ -15,33 +15,36 @@ $.ajax({
     for (var i = 0; i < burgerResponse.length; i++) {
         burgerResponse[i].restaurant.name;
 
-        var burgerHtml = $("<div>").addClass('div');
-
-        burgerHtml.text(burgerResponse[i].restaurant.name);
-
-        $(".burgerRow").append(burgerHtml);
-
-        // var p = $("<p>").text("address + zipCode");
-
-        // var address = burgerResponse.restaurant.location.address;
-
-        // var zipCode = burgerResponse.restaurant.location.zipcode;
+        var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
 
         var burgerImage = $("<img>").addClass('img');
 
+        var pTag = $("<p>")
+
         burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
 
+        pTag.text(burgerResponse[i].restaurant.name);
 
-        burgerHtml.append(burgerImage)
-    
-        // burgerHtml.append(p);
+        divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
+        
 
+        $(".burgerRow").append(divThatWillContainBothImageAndText);
+
+    // function removeBadImage () {
+    //     var badImage = (burgerResponse == 403)
+
+    //     badImage.remove();
+    // }
+};
+});
+FB.api(
+    "/{object-id}/likes",
+    function (response) {
+      if (response && !response.error) {
+        summary=true;
+      }
     }
-});
-});
+);
+})
 
-
-
-// $("button").on("click", function() {
-//       // In this case, the "this" keyword refers to the button that was clicked
-//       var burger = $(this).attr("burger-btn"); 
+ 
