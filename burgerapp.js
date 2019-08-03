@@ -29,24 +29,22 @@ $.ajax({
         
 
         $(".burgerRow").append(divThatWillContainBothImageAndText);
-    }
-});
-});
-$.ajax({
-    method: 'GET',
-    url: "https://graph.facebook.com/me?fields=likes.summary(true)&access_token=EAAG8AeziGZAMBANbmgJ8o0rzBX3BEZC1KEgZCD2zQZBegBzZC86COrQYFZBjZAy6wMEqfKYLZCSexqPZAlnIatLZAOTq9LQSZBZA4xdsnqxsNC3APTM4by4uoUQckIop2ZCmzjfcwjTIRnMZBsaZBZACCkTo2EvkFSrkiOmz5HFRwZA9q44TcGVMi7OISitN935wQpFZCBGtcxu2AXqlFZBxgZDZD%22",
-    contentType: '"Accept: application/json',
-    headers: {
-        'user-access-token': "EAAG8AeziGZAMBANbmgJ8o0rzBX3BEZC1KEgZCD2zQZBegBzZC86COrQYFZBjZAy6wMEqfKYLZCSexqPZAlnIatLZAOTq9LQSZBZA4xdsnqxsNC3APTM4by4uoUQckIop2ZCmzjfcwjTIRnMZBsaZBZACCkTo2EvkFSrkiOmz5HFRwZA9q44TcGVMi7OISitN935wQpFZCBGtcxu2AXqlFZBxgZDZD%22"
-    }
-}).then (function(response) {
 
- 
+    // function removeBadImage () {
+    //     var badImage = (burgerResponse == 403)
 
-    if (response && !response.error) {
+    //     badImage.remove();
+    // }
+};
+});
+FB.api(
+    "/{object-id}/likes",
+    function (response) {
+      if (response && !response.error) {
         summary=true;
+      }
     }
-});
-
+);
+})
 
  
