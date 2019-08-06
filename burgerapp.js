@@ -44,7 +44,11 @@ $.ajax({
         burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
         pTag.text(burgerResponse[i].restaurant.name);
         divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
-		$(".burgerRow"+i).append(divThatWillContainBothImageAndText);	
+        $(".burgerRow"+i).append(divThatWillContainBothImageAndText);	
+        
+        $('img').on("error", function (){
+            $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg(32 kB)');
+        });
 	};
 });
 FB.api(
