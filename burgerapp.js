@@ -16,14 +16,6 @@ $.ajax({
 	html = "<div class='container' id='containerRow'>";
 	$("#burgerResults").append(html);	
     for (var i = 0; i < burgerResponse.length; i++) {
-/*
-        <div class="container">
-            <div class="row burgerRow">
-                <div class="col-4 bg-dark text-white p-3 mx-auto flex-column">
-				</div>
-            </div>
-        </div>
-*/		
         burgerResponse[i].restaurant.name;
 		if (i % 3 == 0) {
 			rowCount++;
@@ -64,5 +56,3 @@ FB.api(
     }
 );
 })
-
- 
