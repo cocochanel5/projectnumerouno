@@ -11,11 +11,20 @@ $.ajax({
     console.log(response.restaurants[0].restaurant.cuisines);
 
     var burgerResponse = response.restaurants;
-  var rowCount = 0;
+    var rowCount = 0;
+
   $("#burgerResults").html("");
 	html = "<div class='container' id='containerRow'>";
 	$("#burgerResults").append(html);	
-    for (var i = 0; i < burgerResponse.length; i++) {
+    for (var i = 0; i <= burgerResponse.length; i++) {
+/*
+        <div class="container">
+            <div class="row burgerRow">
+                <div class="col-4 bg-dark text-white p-3 mx-auto flex-column">
+				</div>
+            </div>
+        </div>
+*/		
         burgerResponse[i].restaurant.name;
 		if (i % 3 == 0) {
 			rowCount++;
@@ -38,13 +47,22 @@ $.ajax({
 		$("#row"+rowCount).append(html);
 		//debugger;
 
-        var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
-        var burgerImage = $("<img>").addClass('img');
-        var pTag = $("<p>").addClass('burger-text');
-        burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
-        pTag.text(burgerResponse[i].restaurant.name);
-        divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
-		$(".burgerRow"+i).append(divThatWillContainBothImageAndText);	
+        if (i < burgerResponse.length) {
+            var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
+            var burgerImage = $("<img>").addClass('img');
+            var pTag = $("<p>").addClass('burger-text');
+            burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
+            pTag.text(burgerResponse[i].restaurant.name);
+            divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
+            $(".burgerRow"+i).append(divThatWillContainBothImageAndText);	
+            $('img').on("error", function (){
+                $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg');
+            });
+        }
+        else {
+            $(".burgerRow"+i).append("&nbsp;");	
+        }
+
 	};
 });
 FB.api(
@@ -56,3 +74,5 @@ FB.api(
     }
 );
 })
+
+ 
