@@ -1,4 +1,5 @@
 $("button").on("click", function() {
+  $(this).hide();
 
 $.ajax({
     method: 'GET',
@@ -11,46 +12,29 @@ $.ajax({
     console.log(response.restaurants[0].restaurant.cuisines);
 
     var burgerResponse = response.restaurants;
-  var rowCount = 0;
-  $("#burgerResults").html("");
-	html = "<div class='container' id='containerRow'>";
-	$("#burgerResults").append(html);	
+
     for (var i = 0; i < burgerResponse.length; i++) {
-        burgerResponse[i].restaurant.name;
-		if (i % 3 == 0) {
-			rowCount++;
-			if (i == 0) {
-				console.log("creating the bootstrap divs");
-    	        html = "<div class='row' id='row"+rowCount+"'>";
-				$("#containerRow").append(html);	
-			}
-			else if (i == burgerResponse.length-1) {
-				console.log("creating the last bootstrap closing divs");
-		        html = "</div>";
-				$("#containerRow").append(html);	
-			}
-			else {
-    	        html = "<div class='row' id='row"+rowCount+"'>";
-				$("#containerRow").append(html);	
-			}
-		}
-        html = "<div class='col-4 bg-dark text-white p-3 mx-auto flex-column burgerRow"+i+"'>";
-		$("#row"+rowCount).append(html);
-		//debugger;
+        // if (!restaurantNames[burgerResponse[i].restaurant.name]) {
 
         var divThatWillContainBothImageAndText = $("<div>").addClass('divThatWillContainBothImageAndText')
+
         var burgerImage = $("<img>").addClass('img');
-        var pTag = $("<p>").addClass('burger-text');
+
+        var pTag = $("<p>")
+
         burgerImage.attr('src', burgerResponse[i].restaurant.featured_image);
+
         pTag.text(burgerResponse[i].restaurant.name);
+
         divThatWillContainBothImageAndText.append(burgerImage).append(pTag);
-        $(".burgerRow"+i).append(divThatWillContainBothImageAndText);	
-        
+
+        $(".burgerRow").append(divThatWillContainBothImageAndText);
+
         $('img').on("error", function (){
-            $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg(32 kB)');
-        });
-	};
-});
+          $(this).attr('src', 'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2015/07/halloumi-burger.jpg');
+      });
+// };
+}});
 FB.api(
     "/{object-id}/likes",
     function (response) {
@@ -60,3 +44,5 @@ FB.api(
     }
 );
 })
+
+ 
